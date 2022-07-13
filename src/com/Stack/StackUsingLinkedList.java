@@ -1,0 +1,71 @@
+package com.Stack;
+
+public class StackUsingLinkedList {
+    static class Node
+    {
+        int data;
+        Node next;
+        public Node(int data)
+        {
+            this.data=data;
+            next=null;
+        }
+    }
+    static class stack
+    {
+        public static boolean isEmpty()
+        {
+            return head==null;
+        }
+        public static Node head;
+        //to add the  element in stack
+        public static void push(int data)
+        {
+            Node newNode=new Node(data);
+            if(isEmpty())
+            {
+                head=newNode;
+                return;
+            }
+            newNode.next=head;
+            head=newNode;
+        }
+        //to delete the item on Stack we use pop method;
+        public static int pop()
+        {
+            if(isEmpty())
+            {
+                return -1;
+            }
+            int top=head.data;
+            head=head.next;
+            return top;
+        }
+        //return top most element;
+        public static int peek()
+        {
+            if(isEmpty())
+            {
+                return -1;
+            }
+            return head.data;
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        stack s = new stack();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        while(!s.isEmpty())
+        {
+            System.out.println(s.peek());
+            s.pop();
+        }
+
+
+
+    }
+}
