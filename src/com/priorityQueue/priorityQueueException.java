@@ -1,4 +1,4 @@
-package com.priorityQueue;
 
-public class priorityQueueException extends Exception {
+public class PriorityQueueException extends Exception{
+
 }
